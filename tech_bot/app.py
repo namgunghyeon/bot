@@ -8,7 +8,7 @@ from slack.Slack import slack_notify
 
 if __name__ == "__main__":
     baemin = Baemin()
-    baemin.crawling()
+    baemin.get_new_post()
 
     naver = Naver()
     naver.crawling()
