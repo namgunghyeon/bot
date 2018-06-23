@@ -1,7 +1,8 @@
 from slacker import Slacker
+from config import SlackConfig
 
 def slack_notify(text=None, channel='#it_news', username='알림봇', attachments=None):
-    token = "xxxxxxxx"
+    token = SlackConfig.TOKEN
     slack = Slacker(token)
     slack.chat.post_message(
       text=text,
@@ -9,5 +10,3 @@ def slack_notify(text=None, channel='#it_news', username='알림봇', attachment
       username=username,
       attachments=attachments
     )
-
-
