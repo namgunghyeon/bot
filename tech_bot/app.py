@@ -14,7 +14,7 @@ if __name__ == "__main__":
     naver.crawling()
 
     kakao = Kakao()
-    kakao.crawling()
+    kakao.get_new_post()
 
     outsider = Outsider()
     outsider.get_new_post()
