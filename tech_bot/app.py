@@ -11,7 +11,7 @@ if __name__ == "__main__":
     baemin.get_new_post()
 
     naver = Naver()
-    naver.crawling()
+    naver.get_new_post()
 
     kakao = Kakao()
     kakao.get_new_post()
