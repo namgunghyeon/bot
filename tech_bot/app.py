@@ -17,7 +17,7 @@ if __name__ == "__main__":
     kakao.crawling()
 
     outsider = Outsider()
-    outsider.crawling()
+    outsider.get_new_post()
 
     medium = Medium()
     medium.crawling()

@@ -9,17 +9,38 @@ class Outsider(Crawler):
     self._feed_base_url = "http://feeds2.feedburner.com/rss_outsider_dev"
 
   def crawling(self):
+    return self._fetch_latest_post()
+
+  def get_new_post(self):
+    posts = self.crawling()
+    last_post = self._get_latest_post_from_db()
+
+    if len(posts) > 0:
+      new_post = posts[0]
+
+      if (new_post["title"] != last_post["title"]) and \
+        (new_post["link"] != last_post["link"]):
+        return new_post
+
+    return None
+
+  def _fetch_latest_post(self):
     feed = feedparser.parse(self._feed_base_url)
 
-    links = []
+    posts = []
     for post in feed.entries:
-      links.append({
+      posts.append({
         'title': post.title,
-        'href': post.link
+        'link': post.link
       })
 
-    for link in links:
-      print(link)
+    return posts
+
+  def _get_latest_post_from_db(self):
+    return {
+      'title': 'title',
+      'link': 'link'
+    }
 
   def web_crawling(self):
     response = requests.get(self._web_base_url)
