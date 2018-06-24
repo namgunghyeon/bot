@@ -10,7 +10,7 @@ from slack.slack import slack_notify
 if __name__ == "__main__":
 
     baemin = Baemin()
-    baemin.get_new_post()
+    baemin.get_new_post_and_update()
 
     naver = Naver()
     naver.get_new_post()
