@@ -13,7 +13,7 @@ class Naver(Crawler):
   def crawling(self):
     return self._fetch_latest_post()
 
-  def get_new_post(self):
+  def get_new_post_and_update(self):
     posts = self.crawling()
     last_post = self._get_latest_post_from_db()
 
@@ -34,6 +34,7 @@ class Naver(Crawler):
     posts = []
     for post in feed.entries:
       posts.append({
+        'site': 'naver',
         'title': post.title,
         'link': post.link
       })
@@ -43,6 +44,7 @@ class Naver(Crawler):
   def _get_latest_post_from_db(self):
     latest_post = self._bot_db.get("naver")
     new_latest_post = {
+      'site': 'naver',
       'title': '',
       'link': ''
     }

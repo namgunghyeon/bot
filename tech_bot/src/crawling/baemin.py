@@ -19,6 +19,7 @@ class Baemin(Crawler):
     posts = []
     for post in feed.entries:
       posts.append({
+        'site': 'baemin',
         'title': post.title,
         'link': post.link
       })
@@ -43,6 +44,7 @@ class Baemin(Crawler):
   def _get_latest_post_from_db(self):
     latest_post = self._bot_db.get("baemin")
     new_latest_post = {
+      'site': 'baemin',
       'title': '',
       'link': ''
     }

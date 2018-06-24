@@ -13,7 +13,7 @@ class Outsider(Crawler):
   def crawling(self):
     return self._fetch_latest_post()
 
-  def get_new_post(self):
+  def get_new_post_and_update(self):
     posts = self.crawling()
     last_post = self._get_latest_post_from_db()
 
@@ -34,6 +34,7 @@ class Outsider(Crawler):
     posts = []
     for post in feed.entries:
       posts.append({
+        'site': 'outsider',
         'title': post.title,
         'link': post.link
       })
@@ -43,6 +44,7 @@ class Outsider(Crawler):
   def _get_latest_post_from_db(self):
     latest_post = self._bot_db.get("outsider")
     new_latest_post = {
+      'site': 'outsider',
       'title': '',
       'link': ''
     }
@@ -64,6 +66,7 @@ class Outsider(Crawler):
 
       if title != None and title:
         links.append({
+          'site': 'outsider',
           'title': title,
           'href': href
         })
