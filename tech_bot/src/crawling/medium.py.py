@@ -1,4 +1,4 @@
-from src.crawling.Crawler import Crawler
+from src.crawling.crawler import Crawler
 
 class Medium(Crawler):
   def __init__(self):

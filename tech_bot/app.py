@@ -1,10 +1,10 @@
-from src.crawling.Baemin import Baemin
-from src.crawling.Naver import Naver
-from src.crawling.Kakao import Kakao
-from src.crawling.Outsider import Outsider
-from src.crawling.Medium import Medium
+from src.crawling.baemin import Baemin
+from src.crawling.naver import Naver
+from src.crawling.kakao import Kakao
+from src.crawling.outsider import Outsider
+from src.crawling.medium import Medium
 
-from slack.Slack import slack_notify
+from slack.slack import slack_notify
 
 if __name__ == "__main__":
     baemin = Baemin()

@@ -1,27 +1,15 @@
 import requests
 import feedparser
-from src.crawling.Crawler import Crawler
+from src.crawling.crawler import Crawler
 from bs4 import BeautifulSoup
 
-class Baemin(Crawler):
+class Naver(Crawler):
   def __init__(self):
-    self._web_base_url = "http://woowabros.github.io"
-    self._feed_base_url = "http://woowabros.github.io/feed.xml"
+    self._web_base_url = "https://d2.naver.com/home"
+    self._feed_base_url = "http://d2.naver.com/d2.atom"
 
   def crawling(self):
     return self._fetch_latest_post()
-
-  def _fetch_latest_post(self):
-    feed = feedparser.parse(self._feed_base_url)
-
-    posts = []
-    for post in feed.entries:
-      posts.append({
-        'title': post.title,
-        'link': post.link
-      })
-
-    return posts
 
   def get_new_post(self):
     posts = self.crawling()
@@ -35,6 +23,18 @@ class Baemin(Crawler):
         return new_post
 
     return None
+
+  def _fetch_latest_post(self):
+    feed = feedparser.parse(self._feed_base_url)
+
+    posts = []
+    for post in feed.entries:
+      posts.append({
+        'title': post.title,
+        'link': post.link
+      })
+
+    return posts
 
   def _get_latest_post_from_db(self):
     return {

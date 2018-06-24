@@ -1,2 +1,2 @@
 class SlackConfig:
-  TOKEN = "xoxp-372432239140-372795579157-386167219616-a498bac07c0faad4de5e332d476c451c"
+  TOKEN = ""

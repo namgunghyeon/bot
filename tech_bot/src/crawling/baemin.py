@@ -1,17 +1,27 @@
 import requests
 import feedparser
-from src.crawling.Crawler import Crawler
+from src.crawling.crawler import Crawler
 from bs4 import BeautifulSoup
 
-from src.crawling.Crawler import Crawler
-
-class Kakao(Crawler):
+class Baemin(Crawler):
   def __init__(self):
-    self._web_base_url = "http://tech.kakao.com/"
-    self._feed_base_url = "http://tech.kakao.com/rss/"
+    self._web_base_url = "http://woowabros.github.io"
+    self._feed_base_url = "http://woowabros.github.io/feed.xml"
 
   def crawling(self):
     return self._fetch_latest_post()
+
+  def _fetch_latest_post(self):
+    feed = feedparser.parse(self._feed_base_url)
+
+    posts = []
+    for post in feed.entries:
+      posts.append({
+        'title': post.title,
+        'link': post.link
+      })
+
+    return posts
 
   def get_new_post(self):
     posts = self.crawling()
@@ -25,18 +35,6 @@ class Kakao(Crawler):
         return new_post
 
     return None
-
-  def _fetch_latest_post(self):
-    feed = feedparser.parse(self._feed_base_url)
-
-    posts = []
-    for post in feed.entries:
-      posts.append({
-        'title': post.title,
-        'link': post.link
-      })
-
-    return posts
 
   def _get_latest_post_from_db(self):
     return {
