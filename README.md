@@ -23,9 +23,17 @@ pip install -r requirements.txt
 ```
 
 ### 테스트
-```
+```shell
 cd tech_bot
 python3 tests.py
+```
+
+### 도커
+```
+docker build -t bot:latest .
+docker run --name bot-app bot:latest
+docker ps -a
+docker rm bot-app
 ```
 
 ### 슬랙 내용
