@@ -3,7 +3,6 @@
 
 ## Tech Bot
 ### 크롤링 대상
- - [medium](https://medium.com/)
  - [배달의민족](http://woowabros.github.io/)
  - [outsider](https://blog.outsider.ne.kr/)
  - [naver](https://d2.naver.com/home)
@@ -12,7 +11,5 @@
 새로운 내용으로 업데이트되면 아침에 슬랙으로 링크 전달
 
 ### 기술 스택
- - aws lambda
-    - Python 3.6
- - store
-    - s3
+- Python 3.6
+- Sqllite3
