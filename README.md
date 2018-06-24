@@ -13,3 +13,21 @@
 ### 기술 스택
 - Python 3.6
 - Sqllite3
+
+### 개발 환경 설정
+```shell
+cd tech_bot
+virtualenv -p python3 <.evn>
+. .env/bin/activate
+pip install -r requirements.txt
+```
+
+### 테스트
+```
+cd tech_bot
+python3 tests.py
+```
+
+### 슬랙 내용
+![image](slack_message.png)
+
