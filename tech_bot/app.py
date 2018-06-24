@@ -29,9 +29,9 @@ def build_text(posts):
   return message
 
 def send_posts(posts):
-  attachments = build_slack_attachments(posts)
-
-  slack_notify(channel="#it_news", attachments=[attachments])
+  if len(posts) > 0:
+    attachments = build_slack_attachments(posts)
+    slack_notify(channel="#it_news", attachments=[attachments])
 
 if __name__ == "__main__":
   posts = []

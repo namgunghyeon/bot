@@ -36,7 +36,7 @@ class Naver(Crawler):
       posts.append({
         'site': 'naver',
         'title': post.title,
-        'link': post.link
+        'link': post.links[0]["href"] if len(post.links) > 0 else ''
       })
 
     return posts
