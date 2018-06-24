@@ -10,7 +10,7 @@ from slack.slack import slack_notify
 
 def build_slack_attachments(posts):
   attachments = {}
-  attachments["pretext"] = "기술 블로그 업데이트"
+  attachments["pretext"] = ":mega: 기술 블로그 업데이트"
   attachments["title"] = "내용"
   attachments["text"] = build_text(posts)
   attachments["mrkdwn_in"] = ["text"]
@@ -24,7 +24,7 @@ def build_text(posts):
     site = post['site']
     title = post['title']
     link = post['link']
-    message += """*{}* \n {} \n {} \n""".format(site, title, link)
+    message += """*{}* \n •{} \n •{} \n""".format(site, title, link)
 
   return message
 
