@@ -6,8 +6,6 @@ from src.crawling.medium import Medium
 from db.bot_db import BotDB
 from slack.slack import slack_notify
 
-from slack.slack import slack_notify
-
 def build_slack_attachments(posts):
   attachments = {}
   attachments["pretext"] = ":mega: 기술 블로그 업데이트"
@@ -24,7 +22,7 @@ def build_text(posts):
     site = post['site']
     title = post['title']
     link = post['link']
-    message += """*{}* \n •{} \n •{} \n""".format(site, title, link)
+    message += """*{}* \n • {} \n • {} \n""".format(site, title, link)
 
   return message
 
