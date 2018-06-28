@@ -2,6 +2,7 @@
  개인적으로 필요한 Bot을 폴더별로 만들어 관리
 
 ## Tech Bot
+![Build Status](https://semaphoreci.com/api/v1/namgunghyeon/bot/branches/master/badge.svg)
 ### 크롤링 대상
  - [배달의민족](http://woowabros.github.io/)
  - [outsider](https://blog.outsider.ne.kr/)
