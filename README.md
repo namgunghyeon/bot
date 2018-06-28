@@ -3,6 +3,8 @@
 
 ## Tech Bot
 ![Build Status](https://semaphoreci.com/api/v1/namgunghyeon/bot/branches/master/badge.svg)
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/91b7b4cb34e240e2aa976b4adc72ad49)](https://www.codacy.com/app/namgunghyeon/bot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=namgunghyeon/bot&amp;utm_campaign=Badge_Grade)
 ### 크롤링 대상
  - [배달의민족](http://woowabros.github.io/)
  - [outsider](https://blog.outsider.ne.kr/)
