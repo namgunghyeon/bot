@@ -1,4 +1,7 @@
 # Bot
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a1b767604d77438894c833a4f2db840f)](https://app.codacy.com/app/namgunghyeon/bot?utm_source=github.com&utm_medium=referral&utm_content=namgunghyeon/bot&utm_campaign=badger)
+
  개인적으로 필요한 Bot을 폴더별로 만들어 관리
 
 ## Tech Bot
