@@ -10,8 +10,9 @@
  - [outsider](https://blog.outsider.ne.kr/)
  - [naver](https://d2.naver.com/home)
  - [kakao](http://tech.kakao.com/)
+ - [meetup.toast](http://meetup.toast.com/)
 
-새로운 내용으로 업데이트되면 아침에 슬랙으로 링크 전달
+새로운 내용으로 업데이트되면 정해진 시간에 슬랙으로 링크 전달
 
 ### 기술 스택
 - Python 3.6
@@ -41,4 +42,8 @@ docker rm bot-app
 
 ### 슬랙 내용
 ![image](slack_message.png)
+
+### Todo
+ - Zappa를 사용하는 구조로 변경
+
 
