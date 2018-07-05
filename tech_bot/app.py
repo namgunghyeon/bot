@@ -2,7 +2,7 @@ from src.crawling.baemin import Baemin
 from src.crawling.naver import Naver
 from src.crawling.kakao import Kakao
 from src.crawling.outsider import Outsider
-from src.crawling.medium import Medium
+from src.crawling.toast import Toast
 from db.bot_db import BotDB
 from slack.slack import slack_notify
 
@@ -22,7 +22,7 @@ def build_text(posts):
     site = post['site']
     title = post['title']
     link = post['link']
-    message += """*{}* \n • {} \n • {} \n""".format(site, title, link)
+    message += """*{}* \n • {} \n   • {} \n""".format(site, title, link)
 
   return message
 
@@ -33,7 +33,7 @@ def send_posts(posts):
 
 if __name__ == "__main__":
   posts = []
-  sites = [Baemin(), Naver(), Kakao(), Kakao(), Outsider()]
+  sites = [Baemin(), Naver(), Kakao(), Kakao(), Outsider(), Toast()]
 
   for crawler in sites:
     post = crawler.get_new_post_and_update()
