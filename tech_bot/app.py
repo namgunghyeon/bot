@@ -31,7 +31,7 @@ def send_posts(posts):
     attachments = build_slack_attachments(posts)
     slack_notify(channel="#it_news", attachments=[attachments])
 
-if __name__ == "__main__":
+def check():
   posts = []
   sites = [Baemin(), Naver(), Kakao(), Kakao(), Outsider(), Toast()]
 
@@ -42,3 +42,6 @@ if __name__ == "__main__":
       posts.append(post)
 
   send_posts(posts)
+
+if __name__ == "__main__":
+  check()
