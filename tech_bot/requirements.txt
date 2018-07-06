@@ -4,5 +4,6 @@ chardet==3.0.4
 feedparser==5.2.1
 idna==2.7
 requests==2.19.1
+selenium==3.13.0
 slacker==0.9.65
 urllib3==1.23
