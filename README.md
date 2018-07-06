@@ -45,5 +45,7 @@ docker rm bot-app
 
 ### Todo
  - Zappa를 사용하는 구조로 변경
+   - sqllite를 dynamoDB로 변경
+   - toast에서 webdriver를 사용하지 않는 방법 필요
 
 
