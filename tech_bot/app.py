@@ -36,7 +36,13 @@ def send_posts(posts):
 def check():
   bot_db = BotDB(db_name=DBConfig.db_name)
   posts = []
-  sites = [Baemin(db=bot_db), Naver(db=bot_db), Kakao(db=bot_db), Kakao(db=bot_db), Outsider(db=bot_db), Toast(db=bot_db)]
+  sites = [
+    Baemin(db=bot_db),
+    Naver(db=bot_db),
+    Kakao(db=bot_db),
+    Kakao(db=bot_db),
+    Outsider(db=bot_db)
+  ]
 
   for crawler in sites:
     post = crawler.get_new_post_and_update()
