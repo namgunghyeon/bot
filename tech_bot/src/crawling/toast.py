@@ -1,15 +1,14 @@
 import requests
 import feedparser
 from src.crawling.crawler import Crawler
-from db.bot_db import BotDB
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
 class Toast(Crawler):
-  def __init__(self):
+  def __init__(self, db):
     self._web_base_url = "http://meetup.toast.com"
     self._feed_base_url = "http://meetup.toast.com/"
-    self._bot_db = BotDB()
+    self._bot_db = db
 
   def crawling(self):
     return self._fetch_latest_post()
@@ -40,9 +39,10 @@ class Toast(Crawler):
       'link': ''
     }
 
-    if latest_post != None and len(latest_post) > 0:
-      new_latest_post['title'] = latest_post[1]
-      new_latest_post['link'] = latest_post[2]
+    if latest_post != None:
+      new_latest_post['title'] = latest_post['title']
+      new_latest_post['link'] = latest_post['link']
+
 
     return new_latest_post
 
