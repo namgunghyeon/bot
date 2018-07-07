@@ -9,7 +9,7 @@
         "keep_warm": false,
         "events": [{
             "function": "app.check",
-            "expressions": ["cron(0/5 * * * ? *)"]
+            "expressions": ["cron(0 0 * * ? *)"]
         }]
     }
 }

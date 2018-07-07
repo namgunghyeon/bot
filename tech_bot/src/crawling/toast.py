@@ -47,7 +47,7 @@ class Toast(Crawler):
     return new_latest_post
 
   def web_crawling(self):
-    driver = webdriver.Chrome("lib/mac/chromedriver")
+    driver = webdriver.Firefox()
     driver.implicitly_wait(3)
     driver.get(self._web_base_url)
 

@@ -7,5 +7,5 @@ class AWSConfig:
   region_name = ""
 
 class DBConfig:
-  db_name="" #dynamo_db, sqlite3
-  table_name=""
+  db_name = "" #dynamo_db, sqlite3
+  table_name = ""
