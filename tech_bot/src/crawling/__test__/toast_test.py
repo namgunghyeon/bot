@@ -1,9 +1,10 @@
 import unittest
 from src.crawling.toast import Toast
+from db.bot_db import BotDB
 
 class toast_test_case(unittest.TestCase):
   def setUp(self):
-    self.toast = Toast()
+    self.toast = Toast(BotDB(db_name="sqlite3"))
 
   def test_fetch_latest_post(self):
     posts = self.toast._fetch_latest_post()

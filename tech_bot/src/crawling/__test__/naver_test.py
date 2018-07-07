@@ -1,9 +1,10 @@
 import unittest
 from src.crawling.naver import Naver
+from db.bot_db import BotDB
 
 class naver_test_case(unittest.TestCase):
   def setUp(self):
-    self.naver = Naver()
+    self.naver = Naver(BotDB(db_name="sqlite3"))
 
   def test_fetch_latest_post(self):
     posts = self.naver._fetch_latest_post()

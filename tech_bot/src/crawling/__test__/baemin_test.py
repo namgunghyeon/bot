@@ -1,9 +1,10 @@
 import unittest
 from src.crawling.baemin import Baemin
+from db.bot_db import BotDB
 
 class baemin_test_case(unittest.TestCase):
   def setUp(self):
-    self.baemin = Baemin()
+    self.baemin = Baemin(BotDB(db_name="sqlite3"))
 
   def test_fetch_latest_post(self):
     posts = self.baemin._fetch_latest_post()

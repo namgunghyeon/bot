@@ -1,9 +1,10 @@
 import unittest
 from src.crawling.kakao import Kakao
+from db.bot_db import BotDB
 
 class kakao_test_case(unittest.TestCase):
   def setUp(self):
-    self.kakao = Kakao()
+    self.kakao = Kakao(BotDB(db_name="sqlite3"))
 
   def test_fetch_latest_post(self):
     posts = self.kakao._fetch_latest_post()

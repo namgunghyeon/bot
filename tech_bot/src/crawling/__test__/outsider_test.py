@@ -1,9 +1,10 @@
 import unittest
 from src.crawling.outsider import Outsider
+from db.bot_db import BotDB
 
 class outsider_test_case(unittest.TestCase):
   def setUp(self):
-    self.outsider = Outsider()
+    self.outsider = Outsider(BotDB(db_name="sqlite3"))
 
   def test_fetch_latest_post(self):
     posts = self.outsider._fetch_latest_post()
