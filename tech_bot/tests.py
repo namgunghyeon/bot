@@ -12,8 +12,7 @@ if __name__ == "__main__":
         loader.loadTestsFromTestCase(outsider_test_case),
         loader.loadTestsFromTestCase(baemin_test_case),
         loader.loadTestsFromTestCase(kakao_test_case),
-        loader.loadTestsFromTestCase(naver_test_case),
-        loader.loadTestsFromTestCase(toast_test_case)
+        loader.loadTestsFromTestCase(naver_test_case)
     ))
 
     runner = TextTestRunner(verbosity=2)
