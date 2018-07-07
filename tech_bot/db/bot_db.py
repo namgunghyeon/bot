@@ -1,63 +1,25 @@
 import sqlite3
 from datetime import datetime
+from db.sqlite3 import Sqlite3
+from db.dynamo_db import DynamoDB
+from db.singleton import Singleton
 
-class Singleton(type):
-    _instances = {}
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
+class BotDB():
+  __metaclass__ = Singleton
+  def __init__(self, db_name):
+    self._db_name = db_name
 
-        return cls._instances[cls]
+    if (self._db_name == "sqlite3"):
+      self._db = Sqlite3()
 
-class BotDB(metaclass=Singleton):
-  def __init__(self):
-    self._conn = sqlite3.connect("db/bot.db")
-    self._cursor = self._conn.cursor()
+    elif (self._db_name == "dynamo_db"):
+      self._db = DynamoDB()
 
-    self._init_table()
-
-  def _init_table(self):
-    self._cursor.execute("""
-      CREATE TABLE IF NOT EXISTS `crawling`(
-        `site` TEXT NOT NULL,
-        `title` TEXT NOT NULL,
-        `link` TEXT NOT NULL,
-        'date' DATETIME,
-        PRIMARY KEY(`site`)
-      )
-    """)
-    self._conn.commit()
+    else:
+      raise ValueError('Invalid db name')
 
   def save(self, site, title, link):
-    self._cursor.execute("""
-      INSERT OR REPLACE INTO crawling(
-        `site`,
-        `title`,
-        `link`,
-        `date`
-      ) VALUES (
-        "{}",
-        "{}",
-        "{}",
-        "{}"
-      )
-    """.format(site, title, link, datetime.now()))
-
-    self._conn.commit()
+    self._db.save(site, title, link)
 
   def get(self, site):
-    self._cursor.execute(
-      """
-        SELECT
-          `site`,
-          `title`,
-          `link`,
-          `date`
-        FROM
-          crawling
-        WHERE
-          site = "{}"
-      """.format(site)
-    )
-
-    return self._cursor.fetchone()
+    return self._db.get(site)
