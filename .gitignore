@@ -105,5 +105,5 @@ venv.bak/
 
 
 # project
-/config.py
+*/config.py
 
