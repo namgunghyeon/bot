@@ -2,6 +2,7 @@ from src.crawling.baemin import Baemin
 from src.crawling.naver import Naver
 from src.crawling.kakao import Kakao
 from src.crawling.outsider import Outsider
+from src.crawling.vcnc import Vcnc
 from src.crawling.toast import Toast
 from db.bot_db import BotDB
 from db.dynamo_db import DynamoDB
@@ -41,7 +42,8 @@ def check():
     Naver(db=bot_db),
     Kakao(db=bot_db),
     Kakao(db=bot_db),
-    Outsider(db=bot_db)
+    Outsider(db=bot_db),
+    Vcnc(db=bot_db)
   ]
 
   for crawler in sites:
