@@ -14,9 +14,7 @@ class Vcnc(Crawler):
 
   def get_new_post_and_update(self):
     posts = self.crawling()
-    print (posts)
     last_post = self._get_latest_post_from_db()
-    print (last_post)
 
     if len(posts) > 0:
       new_post = posts[0]
