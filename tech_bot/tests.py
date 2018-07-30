@@ -4,6 +4,7 @@ from src.crawling.__test__.outsider_test import outsider_test_case
 from src.crawling.__test__.baemin_test import baemin_test_case
 from src.crawling.__test__.kakao_test import kakao_test_case
 from src.crawling.__test__.naver_test import naver_test_case
+from src.crawling.__test__.vcnc_test import vcnc_test_case
 from src.crawling.__test__.toast_test import toast_test_case
 
 if __name__ == "__main__":
@@ -12,7 +13,8 @@ if __name__ == "__main__":
         loader.loadTestsFromTestCase(outsider_test_case),
         loader.loadTestsFromTestCase(baemin_test_case),
         loader.loadTestsFromTestCase(kakao_test_case),
-        loader.loadTestsFromTestCase(naver_test_case)
+        loader.loadTestsFromTestCase(naver_test_case),
+        loader.loadTestsFromTestCase(vcnc_test_case)
     ))
 
     runner = TextTestRunner(verbosity=2)
