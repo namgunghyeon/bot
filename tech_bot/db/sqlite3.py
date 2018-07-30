@@ -56,10 +56,17 @@ class Sqlite3(DB):
     )
 
     items = self._cursor.fetchone()
-    return {
-      "site": items[0],
-      "title": items[1],
-      "link": items[2],
-      "date": items[3]
+    result = {
+      "site": "",
+      "title": "",
+      "link": "",
+      "date": ""
     }
 
+    if items != None and len(items) == 4:
+      result["site"] = items[0]
+      result["title"] = items[1]
+      result["link"] = items[2]
+      result["date"] = items[3]
+
+    return result
